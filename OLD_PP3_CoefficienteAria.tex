@@ -196,13 +196,13 @@ Tenendo conto della composizione dell'aria secca a livello del mare e a temperat
 \end{center}
 }
 
-%\normalsize
-%\begin{Figure}
-%\centering
-%\includegraphics[width=\textwidth]{Pvst-compression.pdf}
-%\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
-%\label{fig:Pvst-compression}
-%\end{Figure}
+\normalsize
+\begin{Figure}
+\centering
+\includegraphics[width=\textwidth]{Pvst-compression.pdf}
+\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
+\label{fig:Pvst-compression}
+\end{Figure}
 
 %ESPANSIONE
 \subsection{Espansione adiabatica dell'aria e successiva termalizzazione isocora}
@@ -214,49 +214,9 @@ Tenendo conto della composizione dell'aria secca a livello del mare e a temperat
 \subsection{Trasformazione adiabatica e isoterma sul piano di Clapeyron}
 \label{subsec:clapeyron}
 \paragraph{Situazione reale}
-Si vuole a questo punto calcolare il parametro $\gamma$ come l'effettivo rapporto tra le derivate della pressione rispetto alla variazione di volume in condizioni adiabatiche e in condizioni isoterme\footnote{Si faccia riferimento all'equazione (\ref{eq:gamma}).}.
-
-Per variazioni di volume piccole (fino a $\SI{50}{mL}$) la pressione in entrambe le condizioni ha un andamento lineare (quando le variazioni di volume diventano più significative la pressione segue la curva descritta dall'equazione $PV=\mathrm{cost}$ per l'isoterma e $PV^{\gamma}=\mathrm{cost}$ per l'adiabatica), dunque è possibile calcolare la derivata di interesse come il coefficiente angolare del fit lineare dei valori di pressione rispetto alle variazioni di volume che hanno portato il gas in quello stato.
-
-Affinché il procedimento sia corretto bisogna però fare attenzione che la pressione iniziale del gas sia la stessa per tutte le misure, come anche la temperatura ed il volume: per questo alla fine di ogni misura si è staccato il sensore di pressione dalla bottiglia in modo che il gas tornasse rapidamente in equilibrio termico con l'ambiente (la cui temperatura si può supporre costante durante l'esperienza) e a pressione atmosferica.
-
-La procedura è analoga a quella descritta nella sezione \ref{subsec:compression}, con la differenza che questa volta si sono usati alcuni piccoli blocchetti di legno di lunghezza diversa posti alla base della siringa per ottenere varie compressioni. Si è ripetuta la misura per cinque volte in modo da ottenere 5 diversi valori di pressione per la compressione adiabatica e altri 5 per la pressione corrispondente alla compressione isoterma.
-Per conoscere l'entità della variazione di volume nelle diverse compressioni, a sensore di pressione staccato si posiziona il pistone della siringa ad un valore arbitrario (nel nostro caso $\SI{50}{mL}$), si effettua la compressione e si legge il valore di riferimento corrispondente alla posizione finale del pistone, la compressione sarà dunque il volume iniziale della camera della siringa meno il volume finale.
-
-In figura \ref{fig:PvsT-multiplecompressions} si riporta l'andamento nel tempo della pressione per tutte e cinque le compressioni; nello stesso grafico sono messi in evidenza i punti dove la pressione del gas corrisponde a quella a seguito della compressione adiabatica e a seguito della termalizzazione (quindi la pressione a cui si giungerebbe con una compressione isoterma).
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\textwidth]{PvsT.pdf}
-%	\captionof{figure}{Andamento della pressione in funzione del tempo per varie compressioni.}
-%	\label{fig:PvsT-multiplecompressions}
-%\end{figure}
-
-In figura \ref{fig:PvsDeltaV} è quindi riportato l'andamento della pressione finale del gas in funzione delle diverse variazioni di volume, sia per la compressione adiabatica che per quella isoterma, insieme ai rispettivi fit lineari.
-Ricordando l'equazione (\ref{eq:gamma}) si stima il valore del parametro $\gamma$ come
-\begin{equation*}
-	\boxed{\boldsymbol{\gamma = \SI{1.3484986\pm 0.0000003}{}}}.
-\end{equation*}
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\textwidth]{inferenza_gamma.pdf}
-%	\captionof{figure}{Andamento della pressione finale al variare della compressione in condizioni adiabatiche e isotermiche, con fit lineare.}
-%	\label{fig:PvsDeltaV}	
-%\end{figure}
 
 
-L'incertezza su tale risultato è stata ottenuta propagando l'incertezza sul coefficiente angolare del fit, pari a 
-\begin{equation*}
-	\sigma_{\mathrm{m}} = \sqrt{\mathrm{var}[\Delta V] \sum_{i=1}^5 \sigma_{P}^{-2}}
-\end{equation*}
-con $\sigma_{P}$ l'incertezza sulla pressione (si faccia riferimento alla sezione \ref{subsec:compression}) e $\mathrm{var}[\Delta V]$ il \emph{braccio di leva} delle ascisse, sull'equazione (\ref{eq:gamma}), ossia
-\begin{equation*}
-	\sigma_{\gamma} = \gamma \sqrt{ \left( \frac{\mathrm{m}_S}{\sigma_{\mathrm{m}}} \right)^2 + \left( \frac{\mathrm{m}_T}{\sigma_{\mathrm{m}}} \right)^2}.
-\end{equation*}
 
-Vediamo subito che l'incertezza su tale stima risulta essere notevolmente più bassa delle aspettative, ciò accade perché, come detto nella sezione \ref{subsec:compression}, l'incertezza sulle misure di pressione è sottostimata, essendo arbitraria la precisione con cui il sensore restituisce le misure.
-Supponendo dunque un'incertezza sottostimata, il valore inferito di $\gamma$ risulta essere compatibile con le previsioni.
 
 
 %==================================================
