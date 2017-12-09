@@ -196,18 +196,59 @@ Tenendo conto della composizione dell'aria secca a livello del mare e a temperat
 \end{center}
 }
 
-%\normalsize
-%\begin{Figure}
-%\centering
-%\includegraphics[width=\textwidth]{Pvst-compression.pdf}
-%\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
-%\label{fig:Pvst-compression}
-%\end{Figure}
+\normalsize
+\begin{Figure}
+\centering
+\includegraphics[width=\textwidth]{Pvst-compression.pdf}
+\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
+\label{fig:Pvst-compression}
+\end{Figure}
 
 %ESPANSIONE
 \subsection{Espansione adiabatica dell'aria e successiva termalizzazione isocora}
 \label{subsec:expansion}
 \paragraph{Situazione reale}
+Anche in questo caso, dovendo simulare condizioni adiabatiche, si procede a realizzare una rapida espansione del volume di gas nella siringa tirando rapidamente il pistone. Di nuovo si stima che la rapidità con cui avviene la trasformazione sia tale da rendere trascurabili interazioni con l'ambiente esterno. In seguito all'espansione si lascia termalizzare il sistema mantenendo costante il volume; raggiunto l'equilibrio si analizzano le variazioni di pressione $\Delta P$ caratteristiche di entrambi i processi: isotermo e adiabatico.
+
+\paragraph{Procedura e presa dati}
+Si è operato nel modo seguente:
+\begin{enumerate}
+\item Si controlla la corretta calibrazione del sensore di bassa pressione, verificando che segni \SI{0}{Pa} alla pressione atmosferica;
+\item Si collega con un tubo in gomma il capillare della bottiglia al sensore di bassa pressione, e si connette la siringa alla bottiglia mediante un altro tubo inserito nel tappo, a tenuta ermetica;
+\item Si fissa un arbitrario valore iniziale di pressione $V_i$, costante nel corso dell'esperimento, da cui far partire l'espansione.\footnote{Il valore numerico di $V_i$ non è rilevante in quanto interessano le variazioni di volume.} Quindi si chiudono i collegamenti dei tubi, in modo che il sistema sia chiuso e alla pressione atmosferica.
+\item Si espande rapidamente il gas mediante un movimento del pistone, quindi lo si tiene fisso nella posizione finale;
+\item Si lascia termalizzare il gas contenuto nel sistema fino a raggiungere un plateaux dei valori di pressione acquisiti dal sensore.
+\end{enumerate}
+Questo procedimento viene ripetuto $6$ volte, la posizione iniziale del pistone è mantenuta costante, la posizione finale varia per ogni espansione. Nuovamente si nota che, diminuendo le variazioni di volume, la misura del coefficiente è più vicina a quello che si suppone essere il valore vero. \textbf{ERRORI???}.\\
+Per fornire una stima quanto più accurata possibile delle pressioni iniziali e finali per entrambi i tipi di trasformazione si media ogni volta sui $100$ valori registrati nel primo e nell'ultimo secondo della misura. Seguendo tale procedimento si riducono notevolmente le incertezze sui valori di pressione\begin{equation}
+\delta_{P_m}=\frac{\sqrt{\delta_P^2+\sigma_P^2}}{10}
+\end{equation}
+dove con $\delta_{P_m}$ viene indicato l'errore effettivo di misura, con $\delta_P$ l'errore sistematico e con $\sigma_P$ la deviazione standard; i valori ottenuti e le rispettive incertezze vengono riportati nella tabella \ref{tab:dati_espansione}. 
+A questo punto, usando l'equazione \ref{eq:gammaexp}, si inferisce una stima del parametro $\gamma$ cercato:\begin{equation*}
+\boxed{\boldsymbol{\gamma = \SI{1.4015 \pm 0.0003}{}}}.
+\end{equation*}
+L'errore su tale stima è stato calcolato utilizzando l'equazione: \begin{equation*}
+\delta_\gamma=boh
+\end{equation*}
+Si osserva che il valore ottenuto, seppur non distante dal valore ipotizzato, non è accurato quanto quello derivante dal primo esperimento. Sebbene è possibile che in quest'esperimento l'errore digitale abbia avuto un effetto più importante rispetto al precedente, si suppone che l'inferiore numero di iterazioni, la mancanza di prove con piccole variazioni di volume (che si è notato essere migliori), ed accidentali variazioni di volume\footnote{Tali variazioni possono essere dovute al fatto che mentre in seguito all'espansione, il volume è mantenuto costante manualmente, in seguito alla compressione si è fatto uso di un elastico.} durante la trasformazione isocora possano anch'essi essere autori di tale discrepanza. \textbf{NELL'ESPANSIONE SI FA PIù CASINO CHE NELLA COMPRESSIONE}.\\\\
+
+Si riporta, per completezza, in figura \ref{fig:press_esp} l'andamento temporale della pressione nelle $6$ espansioni analizzate.
+
+\normalsize
+\begin{Figure}
+\centering
+\includegraphics[width=\textwidth]{press_esp.pdf}
+\captionof{figure}{Andamento della pressione in funzione del tempo}
+\label{fig:press_esp}
+\end{Figure}
+
+
+
+
+
+
+
+
 
 
 %CURVE SU PIANO P-V
@@ -224,6 +265,7 @@ La procedura è analoga a quella descritta nella sezione \ref{subsec:compression}
 Per conoscere l'entità della variazione di volume nelle diverse compressioni, a sensore di pressione staccato si posiziona il pistone della siringa ad un valore arbitrario (nel nostro caso $\SI{50}{mL}$), si effettua la compressione e si legge il valore di riferimento corrispondente alla posizione finale del pistone, la compressione sarà dunque il volume iniziale della camera della siringa meno il volume finale.
 
 In figura \ref{fig:PvsT-multiplecompressions} si riporta l'andamento nel tempo della pressione per tutte e cinque le compressioni; nello stesso grafico sono messi in evidenza i punti dove la pressione del gas corrisponde a quella a seguito della compressione adiabatica e a seguito della termalizzazione (quindi la pressione a cui si giungerebbe con una compressione isoterma).
+
 
 %\begin{figure}
 %	\centering
