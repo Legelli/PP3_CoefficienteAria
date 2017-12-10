@@ -203,7 +203,7 @@ Tenendo conto della composizione dell'aria secca a livello del mare e a temperat
 \begin{Figure}
 \centering
 \includegraphics[width=\textwidth]{Pvst-compression.pdf}
-\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
+%\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
 \label{fig:Pvst-compression}
 \end{Figure}
 
@@ -241,7 +241,7 @@ Si riporta, per completezza, in figura \ref{fig:press_esp} l'andamento temporale
 \begin{Figure}
 \centering
 \includegraphics[width=\textwidth]{press_esp.pdf}
-\captionof{figure}{Andamento della pressione in funzione del tempo}
+%\captionof{figure}{Andamento della pressione in funzione del tempo}
 \label{fig:press_esp}
 \end{Figure}
 
@@ -273,47 +273,54 @@ In figura \ref{fig:PvsT-multiplecompressions} si riporta l'andamento nel tempo d
 \begin{Figure}
 	\centering
 	\includegraphics[width=\textwidth]{PvsT.pdf}
-	\captionof{figure}{Andamento della pressione in funzione del tempo per varie compressioni.}
+%	\captionof{figure}{Andamento della pressione in funzione del tempo per varie compressioni.}
 	\label{fig:PvsT-multiplecompressions}
 \end{Figure}
 
 In figura \ref{fig:PvsDeltaV} è quindi riportato l'andamento della pressione finale del gas in funzione delle diverse variazioni di volume, sia per la compressione adiabatica che per quella isoterma, insieme ai rispettivi fit lineari.
-Ricordando l'equazione (\ref{eq:gamma}) si stima il valore del parametro $\gamma$ come
-\begin{equation*}
-	\gamma = \SI{1.3484986\pm 0.0000003}{}.
-\end{equation*}
 
 \begin{Figure}
 	\centering
 	\includegraphics[width=\textwidth]{inferenza_gamma.pdf}
-	\captionof{figure}{Andamento della pressione finale al variare della compressione in condizioni adiabatiche e isotermiche, con fit lineare.}
+%	\captionof{figure}{Andamento della pressione finale al variare della compressione in condizioni adiabatiche e isotermiche, con fit lineare.}
 	\label{fig:PvsDeltaV}	
 \end{Figure}
 
 
-L'incertezza su tale risultato è stata ottenuta propagando l'incertezza sul coefficiente angolare del fit, pari a 
-\begin{equation*}
-	\sigma_{\mathrm{m}} = \sqrt{\mathrm{var}[\Delta V] \sum_{i=1}^5 \sigma_{P}^{-2}}
-\end{equation*}
-con $\sigma_{P}$ l'incertezza sulla pressione (si faccia riferimento alla sezione \ref{subsec:compression}) e $\mathrm{var}[\Delta V]$ il \emph{braccio di leva} delle ascisse, sull'equazione (\ref{eq:gamma}), ossia
-\begin{equation*}
-	\sigma_{\gamma} = \gamma \sqrt{ \left( \frac{\mathrm{m}_S}{\sigma_{\mathrm{m}}} \right)^2 + \left( \frac{\mathrm{m}_T}{\sigma_{\mathrm{m}}} \right)^2}.
-\end{equation*}
+Un test del $\chi^2$ per questo fit, utilizzando come incertezze sulle pressioni l'ultimo digit diviso per $\sqrt{12}$, genera un valore incompatibile con questo modello, il che suggerisce una sottostima delle incertezze sulle misure di pressione, essendo il modello lineare coerente con la distribuzione delle misure nel piano $P-\Delta V$. Si procede dunque a stimare tale incertezza a posteriori dal fit ottenendo 
 
-Vediamo subito che l'incertezza su tale stima risulta essere notevolmente più bassa delle aspettative, ciò accade perché, come detto nella sezione \ref{subsec:compression}, l'incertezza sulle misure di pressione è sottostimata, essendo arbitraria la precisione con cui il sensore restituisce le misure.
-In aggiunta, un test del $\chi^2$ sul fit produce un risultato nell'ordine di $10^8$: la sottostima dell'incertezza nelle misure di pressione risulta quindi essere eccessiva, dunque si è scelto di stimare l'incertezza a partire dal fit lineare ottenendo
+\begin{equation}\label{eq:sigmaP}
+	\sigma_{\mathrm{P}} = \SI{0.06}{kPa}.
+\end{equation}
+
+Dai due fit lineari si stimano le due derivate di interesse (pari ai coefficienti angolari delle rette interpolate):
 
 \begin{equation*}
-	\sigma = \SI{0.06}{kPa}.	
+	\left(\frac{ \partial P }{\partial V}\right)_{\mathrm{S}} = \mathrm{m}_{\mathrm{S}} = \SI{-0.1109 \pm 0.0014}{\frac{kPa}{mL}}
+\end{equation*}
+\begin{equation*}
+	\left(\frac{ \partial P }{ \partial V }\right)_{\mathrm{T}} = \mathrm{m}_{\mathrm{T}} = \SI{-0.0809 \pm 0.0014}{\frac{kPa}{mL}}.
 \end{equation*}
 
-Utilizzando questa incertezza la stima del parametro $\gamma$ a partire dal fit lineare risulta essere
+L'incertezza su tali coefficienti è stata ottenuta propagando l'incertezza sulle misure di pressione in (\ref{eq:sigmaP}) sulle formule dei minimi quadrati per il fit lineare, cioè
 
 \begin{equation*}
-\boxed{\boldsymbol{\gamma = \SI{1.3485 \pm 0.0006}{}}}
+	\sigma_{\mathrm{m}} = \left( \mathrm{var}[\Delta V] \sum_{i=0}^4 \frac{1}{\sigma_{\mathrm{P}}^2} \right)^{-1/2}.
 \end{equation*}
 
-dove l'incertezza è stata calcolata come descritto sopra, propagando però stavolta l'incertezza sulla misura di pressione inferita dal fit lineare dei dati.
+Dall'equazione (\ref{eq:gamma}) si stima infine il valore di tale parametro come
+
+\begin{equation*}
+\boxed{\boldsymbol{\gamma = \SI{1.37 \pm 0.03}{}}}
+\end{equation*}
+
+dove l'incertezza è stata calcolata propagando le incertezze relative con
+
+\begin{equation*}
+	\sigma_{\gamma} = \gamma \sqrt{ \left(\frac{\sigma_{\mathrm{m}}}{\mathrm{m}_{\mathrm{S}}} \right)^2 + \left( \frac{\sigma_{\mathrm{m}}}{\mathrm{m}_{\mathrm{T}}} \right)^2}.
+\end{equation*}
+
+Il valore del parametro $\gamma$ inferito dalla regressione lineare è compatibile in una $\sigma$ sia con i valori ricavati con gli altri metodi descritti in questa relazione che con il modello teorico nel quale l'aria è un gas biatomico.
 
 %==================================================
 %				CONSIDERAZIONI FINALI
