@@ -160,7 +160,7 @@ Si è operato nel modo seguente:
 \item Si comprime rapidamente il gas mediante un movimento del pistone, quindi lo si blocca nella posizione finale (a battuta sul fondo della stessa) con un elastico;
 \item Si lascia termalizzare il gas contenuto nel sistema fino a raggiungere un plateaux dei valori di pressione acquisiti dal sensore.
 \end{enumerate}
-Il medesimo procedimento viene ripetuto per $10$ volte, variando la posizione iniziale del pistone, e dunque il volume iniziale. Si riportano i dati acquisiti in tabella~\ref{tab:compression-datas}: la seconda colonna indica gli errori sulla variazione di volume, calcolata con
+Il medesimo procedimento viene ripetuto per $10$ volte, variando la posizione iniziale del pistone, e dunque il volume iniziale. Si riportano i dati acquisiti in tabella~\ref{tab:compression-datas}: la seconda colonna indica gli errori sulla variazione di volume, calcolati con
 \begin{equation}\label{eqn:error_V}
 \delta_{\Delta V} = \sqrt{2}\frac{\sigma_V}{\Delta V};
 \end{equation}
@@ -171,7 +171,9 @@ Si procede quindi a calcolare la media dei valori di gamma per ogni singola iter
 \end{equation*}
 È evidente, inoltre, che le incertezze sulla pressione prese assumendo una distribuzione uniforme sull'ultimo digit siano trascurabili rispetto a quelle statistiche: è questo altro argomento contro la affidabilità delle ultime cifre significative acquisite dai sensori, che aumentando l'accuratezza vengono sempre più viziate da rumore digitale ed errori sistematici.
 
-Tenendo conto della composizione dell'aria secca a livello del mare e a temperatura ambiente, costituita circa dal $78\%$ da azoto $N_2$, gas biatomico, si ipotizza quale \emph{valore vero} del coefficiente adiabatico dell'aria il valore dato dal rapporto di $c_P = 7R / 2$ su $c_V = 5R / 2$ per i gas perfetti biatomici, ovvero $\gamma = 7 / 5 = 1.4$; si osserva che il valore ottenuto sperimentalmente è compatibile con il valore vero entro una deviazione standard. Nella precedente esperienza si è fatto notare, comunque, che i dati acquisiti da \emph{DataStudio} per i valori della pressione sono affetti da errore digitale oltre che da incertezze sistematiche che non è possibile stimare mediante la deviazione standard del singolo dato. Si riporta in particolare in figura~\ref{fig:Pvst-compression} il grafico della pressione in funzione del tempo per il caso con variazione di volume $\Delta V = \SI{10}{mL}$
+Tenendo conto della composizione dell'aria secca a livello del mare e a temperatura ambiente, costituita circa dal $78\%$ da azoto $N_2$, gas biatomico, si ipotizza quale \emph{valore vero} del coefficiente adiabatico dell'aria il valore dato dal rapporto di $c_P = 7R / 2$ su $c_V = 5R / 2$ per i gas perfetti biatomici, ovvero $\gamma = 7 / 5 = 1.4$; si osserva che il valore ottenuto sperimentalmente è compatibile con il valore vero entro una deviazione standard. Nella precedente esperienza si è fatto notare, comunque, che i dati acquisiti da \emph{DataStudio} per i valori della pressione sono affetti da errore digitale oltre che da incertezze sistematiche che non è possibile stimare mediante la deviazione standard del singolo dato.
+
+A titolo esemplificativo, si riporta in figura~\ref{fig:Pvst-compression} il grafico della pressione in funzione del tempo per il caso con variazione di volume $\Delta V = \SI{10}{mL}$: si osserva il rapido incremento di pressione dovuto alla compressione adiabatica e alla successiva diminuzione dovuta alla termalizzazione del gas con l'ambiente esterno. È da tenere in considerazione, comunque, che un plateaux verrà raggiunto solo asintoticamente, in quanto non è garantita la perfetta tenuta di tutte le giunzioni tra le varie componenti del sistema, in primis del pistone della siringa.
 
 
 \tiny{
@@ -179,7 +181,7 @@ Tenendo conto della composizione dell'aria secca a livello del mare e a temperat
 \begin{center}
 \begin{tabular}{ccccc}
    $\Delta V$  &   $\delta_{\Delta V}$  &   $(\Delta P)_S$ [\SI{}{Pa}] &   $(\Delta P)_T$ [\SI{}{Pa}] 	& $\gamma$	\\
-	{[\SI{e-5}{m^3}]}	&	[\SI{e-5}{m^3}]	&			$\pm$ 0.03 		&			$\pm$ 0.03 		& \footnote{L'errore sul coefficiente $\gamma$ stimato per ogni iterazione è dell'ordine di $10^{-9}$, in quanto discende direttamente dalle incertezze molto piccole sulle variazioni di pressione $(\Delta P)_S$ e $(\Delta P)_T$. Non si ritiene tuttavia corretto presentare queste incertezze, in quanto esse non tengono conto né del rumore digitale di cui è affetto il sensore, né della arbitrarietà con cui vengono scelte le cifre decimali nell'acquisizione, né di tutti gli errori sistematici che occorrono nell'esperienza e che non sono considerati nei dati acquisiti. Pertanto si riporta tale valore solo per mostrare come esso aumentitanto più la variazione di volume è ridotta.} \\
+	{[\SI{e-5}{m^3}]}	&	[\SI{e-5}{m^3}]	&			$\pm$ 0.03 		&			$\pm$ 0.03 		& \footnotemark \\
         \toprule 	
                        6.00 &                0.07 &                    5039.17 &                    3789.17  & 1.33 \\
                        4.00 &                0.11 &                    4170.05 &                    3061.61 & 1.36\\
@@ -197,13 +199,14 @@ Tenendo conto della composizione dell'aria secca a livello del mare e a temperat
 \label{tab:compression-datas}
 \end{center}
 \end{table*}
+\footnotetext{\label{fn:tab_gamma} L'errore sul coefficiente $\gamma$ stimato per ogni iterazione è dell'ordine di $10^{-9}$, in quanto discende direttamente dalle incertezze molto piccole sulle variazioni di pressione $(\Delta P)_S$ e $(\Delta P)_T$. Non si ritiene tuttavia corretto presentare queste incertezze, in quanto esse non tengono conto né del rumore digitale di cui è affetto il sensore, né della arbitrarietà con cui vengono scelte le cifre decimali nell'acquisizione, né di tutti gli errori sistematici che occorrono nell'esperienza e che non sono considerati nei dati acquisiti. Pertanto si riporta tale valore solo per mostrare come esso aumenti tanto più la variazione di volume è ridotta.}
 }
 
 \normalsize
 \begin{Figure}
 \centering
 \includegraphics[width=\textwidth]{Pvst-compression.pdf}
-%\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
+\captionof{figure}{Andamento della pressione in funzione del tempo, $\Delta V = \SI{10}{mL}$}
 \label{fig:Pvst-compression}
 \end{Figure}
 
@@ -235,10 +238,10 @@ Osservando i valori di $\gamma$ ottenuti, si vede subito che, per variazioni di 
 Si procede quindi a calcolare la media dei valori ottenuti per $\gamma$  dalle singole iterazioni; si osserva nuovamente che il risultato si avvicina tanto più al supposto valore vero tanto più le variazioni di volume sono piccole. Il valor medio riportato è accompagnato, come incertezza, dalla deviazione standard dei $6$ dati sperimentali acquisiti in quanto si ritiene che le incertezze sulla pressione siano trascurabili rispetto a quelle statistiche
 
 \begin{equation*}
-\boxed{\boldsymbol{\gamma = \SI{1.33 \pm 0.02}{}}}.
+\boxed{\boldsymbol{\gamma = \SI{1.33 \pm 0.05}{}}}.
 \end{equation*}
 
-dove $\delta_{\gamma}=\sigma_{\gamma}/\sqrt{6}$. Il valore ottenuto, seppur non distante da quello ipotizzato, non è accurato quanto quello derivante dal primo esperimento. Sebbene è possibile che in quest'esperimento il rumore digitale abbia avuto un effetto più importante rispetto al precedente, si suppone che l'inferiore numero di iterazioni, la mancanza di prove con piccole variazioni di volume (che si è notato essere migliori), ed accidentali variazioni di volume\footnote{Tali variazioni possono essere dovute al fatto che mentre in seguito all'espansione, il volume è mantenuto costante manualmente, in seguito alla compressione si è fatto uso di un elastico.} durante la trasformazione isocora possano complici di tale discrepanza.
+dove si fornisce quale errore la deviazione standard (errore di tipo massimo) poiché i dati sono in numero eccessivamente ridotto per poterli trattare con la deviazione standard della media. Il valore ottenuto, seppur distante due sigma da quello \emph{vero}, non è accurato quanto quello derivante dal primo esperimento. Sebbene sia possibile che in quest'esperimento il rumore digitale abbia avuto un effetto più importante rispetto al precedente, si suppone che l'inferiore numero di iterazioni, la mancanza di prove con piccole variazioni di volume (che si è notato essere migliori), ed accidentali variazioni di volume\footnote{Tali variazioni possono essere dovute al fatto che mentre in seguito all'espansione, il volume è mantenuto costante manualmente, in seguito alla compressione si è fatto uso di un elastico.} durante la trasformazione isocora siano le principali cause di tale discrepanza.
 
 Si riporta, per completezza, in figura \ref{fig:press_esp} l'andamento temporale della pressione nelle $6$ espansioni analizzate.
 
@@ -248,20 +251,21 @@ Si riporta, per completezza, in figura \ref{fig:press_esp} l'andamento temporale
 \begin{tabular}{ccccc}
 \hline
   $\Delta V$  &   $\delta_{\Delta V}$  &   $(\Delta P)_S$ [\SI{}{Pa}] &   $(\Delta P)_T$ [\SI{}{Pa}] 	& $\gamma$	\\
-  {[\SI{e-5}{m^3}]}	&	[\SI{e-5}{m^3}]	&				&		 &  \\
+  {[\SI{e-5}{m^3}]}	&	[\SI{e-5}{m^3}]	&		$\pm$ 0.03		&	$\pm$ 0.03	 & \footnotemark \\
 \hline
-                    5.00e-05 &                                0.06 &                    4775.6010 &                    3662.7256 &    1.30 \\
-                    5.80e-05 &                                0.05 &                    5528.4391 &                    4211.3079 &    1.31 \\
-                    3.70e-05 &                                0.08 &                    3613.7812 &                    2749.4912 &    1.31 \\
-                    4.25e-05 &                                0.07 &                    4070.2428 &                    3113.0361 &    1.31 \\
-                    1.10e-05 &                                0.27 &                    1167.0300 &                     888.4560 &    1.31 \\
-                    4.00e-06 &                                0.75 &                     384.0480 &                     271.6404 &    1.41 \\
+                    5.00 &                                0.06 &                    4775.60 &                    3662.73 &    1.30 \\
+                    5.80 &                                0.05 &                    5528.44 &                    4211.31 &    1.31 \\
+                    3.70 &                                0.08 &                    3613.78 &                    2749.49 &    1.31 \\
+                    4.25 &                                0.07 &                    4070.24 &                    3113.04 &    1.31 \\
+                    1.10 &                                0.03 &                    1167.03 &                     888.46 &    1.31 \\
+                    0.40 &                                0.08 &                     384.05 &                     271.64 &    1.41 \\
 \hline
 \end{tabular}
 \captionof{table}{Dati relativi all'espansione adiabatica e alla termalizzazione isocora}
 \label{tab:dati_espansione}
 \end{center}
 \end{table*}
+\footnotetext{Si veda la nota~\ref{fn:tab_gamma}.}
 }
 
 
@@ -270,28 +274,9 @@ Si riporta, per completezza, in figura \ref{fig:press_esp} l'andamento temporale
 \begin{Figure}
 \centering
 \includegraphics[width=\textwidth]{press_esp.pdf}
-%\captionof{figure}{Andamento della pressione in funzione del tempo}
+\captionof{figure}{Andamento della pressione in funzione del tempo}
 \label{fig:press_esp}
 \end{Figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 %CURVE SU PIANO P-V
 \subsection{Trasformazione adiabatica e isoterma sul piano di Clapeyron}
@@ -312,7 +297,7 @@ In figura \ref{fig:PvsT-multiplecompressions} si riporta l'andamento nel tempo d
 \begin{Figure}
 	\centering
 	\includegraphics[width=\textwidth]{PvsT.pdf}
-%	\captionof{figure}{Andamento della pressione in funzione del tempo per varie compressioni.}
+	\captionof{figure}{Andamento della pressione in funzione del tempo per varie compressioni.}
 	\label{fig:PvsT-multiplecompressions}
 \end{Figure}
 
@@ -321,7 +306,7 @@ In figura \ref{fig:PvsDeltaV} è quindi riportato l'andamento della pressione fin
 \begin{Figure}
 	\centering
 	\includegraphics[width=\textwidth]{inferenza_gamma.pdf}
-%	\captionof{figure}{Andamento della pressione finale al variare della compressione in condizioni adiabatiche e isotermiche, con fit lineare.}
+	\captionof{figure}{Andamento della pressione finale al variare della compressione in condizioni adiabatiche e isotermiche, con fit lineare.}
 	\label{fig:PvsDeltaV}	
 \end{Figure}
 
@@ -365,6 +350,14 @@ Il valore del parametro $\gamma$ inferito dalla regressione lineare è compatibil
 %				CONSIDERAZIONI FINALI
 %==================================================
 \section{Considerazioni finali}
+Le tre diverse procedure per la misura del coefficiente adiabatico dell'aria $\gamma$ forniscono valori situati entro al massimo due deviazioni standard dal \emph{valore vero}, supposto pari a $\SI{1.40}{}$ assumendo l'aria come gas biatomico, in quanto prevalentemente costituito da azoto. La precisione delle misure fornite rispecchia da un lato la possibilità di trattare l'aria come gas perfetto senza eccessiva approssimazione delle caratteristiche reali, almeno per temperature prossime a quella ambiente, dall'altro la prossimità del procedimento adottato, ossia la compressione e l'espansione del gas per piccole variazioni di volume, con quello di derivazione, che prevede infinitesimi incrementi di tale variabile termodinamica.
+
+Anche in questa esperienza, la accuratezza delle misure non si accompagna alla precisione delle stesse: la arbitrarietà della scelta delle cifre significative acquisite dai sensori interfacciati a \emph{DataStudio} non tiene infatti conto degli errori sistematici quali la perdita di moli, la non adiabaticità dell'espansione/compressione iniziale, la eventuale imprecisa stima della variazione di volume, l'oscillazione dei valori di pressione causata dal rumore digitale, gli effetti dovuti a compressioni o espansioni troppo piccole o grandi e infine del ridotto numero di misure che non rende possibile compiere una approfondita analisi statistica. 
+
+Si ritiene in conclusione che la praticità dell'esperienza condotta, la sua immediatezza e semplicità di realizzazione, forniscano un valido risultato, conforme a quanto previsto teoricamente, in linea con il modello teorico che descrive le curve delle trasformazioni adiabatiche e isoterme nel piano di Clapeyron, e soddisfacente nell'ottica di trattare l'aria mediante le equazioni relative ai gas perfetti. 
+
+
+
 
 
 \end{multicols}
